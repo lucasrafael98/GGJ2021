@@ -16,6 +16,8 @@ namespace MoreMountains.InventoryEngine
     /// </summary>
     public class Inventory : MonoBehaviour, MMEventListener<MMInventoryEvent>, MMEventListener<MMGameEvent>
     {
+        public GameObject player;
+
         /// The different possible inventory types, main are regular, equipment will have special behaviours (use them for slots where you put the equipped weapon/armor/etc).
         public enum InventoryTypes { Main, Equipment }
 
@@ -118,6 +120,10 @@ namespace MoreMountains.InventoryEngine
                 Debug.LogWarning(this.name + " : The item you want to add to the inventory is null");
                 return false;
             }
+
+            player.transform.GetChild(0)
+                .gameObject.GetComponent<SpriteRenderer>()
+                .sprite = itemToAdd.Icon;
 
             List<int> list = InventoryContains(itemToAdd.ItemID);
             // if there's at least one item like this already in the inventory and it's stackable
