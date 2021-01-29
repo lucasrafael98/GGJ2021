@@ -17,6 +17,7 @@ namespace MoreMountains.TopDownEngine
 	public class InputManager : MMSingleton<InputManager>
 	{
         public GameObject RecipeBook;
+        public int SatisfactionRation = 100;
         public int pageIdx = 0;
         public List<GameObject> pages = new List<GameObject>();
 		public bool menuOn = false;
