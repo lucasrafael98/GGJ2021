@@ -3,6 +3,7 @@ using System.Collections;
 using MoreMountains.Tools;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MoreMountains.TopDownEngine
 {	
@@ -15,6 +16,10 @@ namespace MoreMountains.TopDownEngine
 	[AddComponentMenu("TopDown Engine/Managers/Input Manager")]
 	public class InputManager : MMSingleton<InputManager>
 	{
+        public GameObject RecipeBook;
+        public int pageIdx = 0;
+        public List<GameObject> pages = new List<GameObject>();
+		public bool menuOn = false;
 		[Header("Status")]
 		/// set this to false to prevent the InputManager from reading input
 		[Tooltip("set this to false to prevent the InputManager from reading input")]
@@ -114,6 +119,13 @@ namespace MoreMountains.TopDownEngine
         /// </summary>
         protected override void Awake()
 		{
+            RecipeBook = GameObject.FindGameObjectWithTag("RecipeBook");
+            pages.AddRange(GameObject.FindGameObjectsWithTag("Page"));
+            for (int i = 1; i < pages.Count; i++)
+            {
+				pages[i].SetActive(false);
+            }
+            RecipeBook.SetActive(menuOn);
             base.Awake();
             Initialization();
         }
@@ -207,14 +219,45 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Update()
 		{		
-			if (!IsMobile && InputDetectionActive)
+			if (!menuOn && !IsMobile && InputDetectionActive)
 			{	
 				SetMovement();	
 				SetSecondaryMovement ();
 				SetShootAxis ();
 				GetInputButtons ();
                 GetLastNonNullValues();
-			}									
+			}
+
+            if (menuOn)
+            {
+                if (Input.GetKeyUp(KeyCode.A))
+                {
+                    if (pageIdx - 1 >= 0)
+                    {
+                        pages[pageIdx].SetActive(false);
+                        pageIdx--;
+                        pages[pageIdx].SetActive(true);
+                    }
+                }
+
+                if (Input.GetKeyUp(KeyCode.D))
+                {
+                    if (pageIdx + 1 < pages.Count)
+                    {
+                        pages[pageIdx].SetActive(false);
+                        pageIdx++;
+                        pages[pageIdx].SetActive(true);
+                    }
+                }
+
+            }
+
+			if (Input.GetKeyUp(KeyCode.M))
+            {
+                menuOn = !menuOn;
+                RecipeBook.SetActive(menuOn);
+            }
+
 		}
 
         /// <summary>
