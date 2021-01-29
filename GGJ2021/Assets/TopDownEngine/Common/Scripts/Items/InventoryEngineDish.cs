@@ -14,7 +14,7 @@ namespace MoreMountains.TopDownEngine
 	{
 		protected Animator _animator;
 		public Inventory _targetInventory;
-		public List<InventoryItem> _itemList;
+		public CompoundItem _item;
 
 		GameObject player;
 
@@ -31,14 +31,24 @@ namespace MoreMountains.TopDownEngine
 		public virtual void InsertItemInDish()
 		{
 			InventoryItem item = _targetInventory.Content[0];
+			Debug.Log(item);
 			if(item == null){
 				return;
 			}
-			_itemList.Add(item);
+			_item._itemList.Add(item);
 			_targetInventory.Content[0] = null;
 			player.transform.GetChild(0)
                 .gameObject.GetComponent<SpriteRenderer>()
                 .sprite = null;
+		}
+
+		public void RetrieveDish()
+		{
+			if(_item._itemList.Count < 1){
+				return;
+			}
+			_targetInventory.AddItem(_item, 1);
+			_item._itemList.Clear();
 		}
 			
 		public virtual void FindTargetInventory(string targetInventoryName)

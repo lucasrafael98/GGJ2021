@@ -33,7 +33,6 @@ namespace MoreMountains.TopDownEngine
 		public virtual void InsertItemInDish()
 		{
 			InventoryItem item = _targetInventory.Content[0];
-			Debug.Log("Insert");
 			if(item == null || item.ItemID != _desiredItem.ItemID){
 				return;
 			}
@@ -47,10 +46,6 @@ namespace MoreMountains.TopDownEngine
 
 		public void RetrieveFromGrill()
 		{
-			Debug.Log("Retrieve");
-			Debug.Log(_currentItem);
-			Debug.Log(_cookedItem);
-			Debug.Log(_desiredItem);
 			InventoryItem item = _currentItem;
 			if(item == null){
 				return;
@@ -61,9 +56,7 @@ namespace MoreMountains.TopDownEngine
 
 		IEnumerator Cook(float waitTime){
 			yield return new WaitForSeconds(waitTime);
-			Debug.Log("done");
 			_currentItem = _cookedItem;
-			Debug.Log(_currentItem);
 		}
 			
 		public virtual void FindTargetInventory(string targetInventoryName)

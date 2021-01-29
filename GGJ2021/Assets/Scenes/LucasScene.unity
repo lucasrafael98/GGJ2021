@@ -2361,24 +2361,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ingred Chest
       objectReference: {fileID: 0}
-    - target: {fileID: 2985636020934994, guid: 53988ea277d614c4482bdd5e44ca4356, type: 3}
-      propertyPath: m_Offset.x
-      value: -7.2392187
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985636020934994, guid: 53988ea277d614c4482bdd5e44ca4356, type: 3}
-      propertyPath: m_Size.x
-      value: 1.0139751
-      objectReference: {fileID: 0}
-    - target: {fileID: 59443779078997507, guid: 53988ea277d614c4482bdd5e44ca4356,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 59443779078997507, guid: 53988ea277d614c4482bdd5e44ca4356,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.032042
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53988ea277d614c4482bdd5e44ca4356, type: 3}
 --- !u!4 &2985636912657484 stripped
@@ -2464,9 +2446,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7662096463880995520, guid: f44a6786ba27d3d4191e6850f2cfcf63, type: 3}
-    - {fileID: 7662096463880995521, guid: f44a6786ba27d3d4191e6850f2cfcf63, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44a6786ba27d3d4191e6850f2cfcf63, type: 3}
 --- !u!1001 &6248049946404492454
 PrefabInstance:
@@ -2475,6 +2455,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 345967040}
     m_Modifications:
+    - target: {fileID: 1458199324, guid: 0d312eb16185e9143b44aeeb79666fe8, type: 3}
+      propertyPath: _targetInventory
+      value: 
+      objectReference: {fileID: 1198937753}
     - target: {fileID: 6248049947756422632, guid: 0d312eb16185e9143b44aeeb79666fe8,
         type: 3}
       propertyPath: _targetInventory

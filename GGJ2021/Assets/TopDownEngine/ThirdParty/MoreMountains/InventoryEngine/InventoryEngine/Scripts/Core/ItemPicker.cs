@@ -22,6 +22,7 @@ namespace MoreMountains.InventoryEngine
 		public bool PickAsMuchQuantityAsPossible = false;
 		/// if you set this to true, the object will be disabled when picked
 		public bool DisableObjectWhenDepleted = false;
+		public bool InfinitePickable = true;
 
 		protected int _pickedQuantity = 0;
 
@@ -110,7 +111,9 @@ namespace MoreMountains.InventoryEngine
 			}				
 			if (Item.Pick())
             {
-                Quantity = Quantity - _pickedQuantity;
+				if(!InfinitePickable){
+                	Quantity = Quantity - _pickedQuantity;
+				}
                 PickSuccess();
                 DisableObjectIfNeeded();
             }			
