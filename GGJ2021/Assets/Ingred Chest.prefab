@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2985636020934993}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.2180376, y: -2.126296, z: -0.30995354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -7.2712603, y: 3.7395034}
+  m_Offset: {x: -7.2392187, y: 3.7395034}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9819336, y: 1.5780897}
+  m_Size: {x: 1.0139751, y: 1.5780897}
   m_EdgeRadius: 0
 --- !u!114 &2985636020934995
 MonoBehaviour:
@@ -158,6 +158,7 @@ MonoBehaviour:
   PickableIfInventoryIsFull: 0
   PickAsMuchQuantityAsPossible: 0
   DisableObjectWhenDepleted: 0
+  InfinitePickable: 1
 --- !u!1001 &2985636795234351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -212,6 +213,11 @@ PrefabInstance:
     - target: {fileID: 4431888149211338, guid: 47bbce8398d72ac438958732815b3b0b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61278698837900844, guid: 47bbce8398d72ac438958732815b3b0b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.032042
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47bbce8398d72ac438958732815b3b0b, type: 3}
