@@ -120,7 +120,6 @@ namespace MoreMountains.TopDownEngine
         /// </summary>
         protected override void Awake()
 		{
-            RecipeBook = GameObject.FindGameObjectWithTag("RecipeBook");
             pages.AddRange(GameObject.FindGameObjectsWithTag("Page"));
             for (int i = 1; i < pages.Count; i++)
             {
