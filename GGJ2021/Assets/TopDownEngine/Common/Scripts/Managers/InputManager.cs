@@ -4,6 +4,7 @@ using MoreMountains.Tools;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 namespace MoreMountains.TopDownEngine
 {	
@@ -15,12 +16,17 @@ namespace MoreMountains.TopDownEngine
 	/// </summary>
 	[AddComponentMenu("TopDown Engine/Managers/Input Manager")]
 	public class InputManager : MMSingleton<InputManager>
-	{
+    {
+        public Dictionary<string, string[]> Recipes;
+
         public GameObject RecipeBook;
-        public int SatisfactionRation = 100;
         public int pageIdx = 0;
         public List<GameObject> pages = new List<GameObject>();
 		public bool menuOn = false;
+        public GameObject MeatMenu;
+        public int meatPageIdx = 0;
+        public List<GameObject> meatPages = new List<GameObject>();
+		public GameObject fridge;
 		[Header("Status")]
 		/// set this to false to prevent the InputManager from reading input
 		[Tooltip("set this to false to prevent the InputManager from reading input")]
@@ -115,6 +121,12 @@ namespace MoreMountains.TopDownEngine
 		protected string _axisShoot;
         protected string _axisShootSecondary;
 
+
+        protected void populateRecipes()
+        {
+            Recipes = new Dictionary<string, string[]>();
+        }
+
         /// <summary>
         /// On Start we look for what mode to use, and initialize our axis and buttons
         /// </summary>
@@ -170,7 +182,7 @@ namespace MoreMountains.TopDownEngine
 					IsMobile = false;	
 					#endif
 				}
-			}
+            }
 		}
 
 		/// <summary>
@@ -214,19 +226,19 @@ namespace MoreMountains.TopDownEngine
 			ProcessButtonStates();
 		}
 
-		/// <summary>
-		/// At update, we check the various commands and update our values and states accordingly.
-		/// </summary>
-		protected virtual void Update()
-		{		
-			if (!menuOn && !IsMobile && InputDetectionActive)
-			{	
-				SetMovement();	
-				SetSecondaryMovement ();
-				SetShootAxis ();
-				GetInputButtons ();
+        /// <summary>
+        /// At update, we check the various commands and update our values and states accordingly.
+        /// </summary>
+        protected virtual void Update()
+        {
+            if (!menuOn && !IsMobile && InputDetectionActive && !MeatMenu.activeSelf)
+            {
+                SetMovement();
+                SetSecondaryMovement();
+                SetShootAxis();
+                GetInputButtons();
                 GetLastNonNullValues();
-			}
+            }
 
             if (menuOn)
             {
@@ -251,14 +263,41 @@ namespace MoreMountains.TopDownEngine
                 }
 
             }
+            else if (MeatMenu.activeSelf)
+            {
+                if (Input.GetKeyUp(KeyCode.W))
+                {
+                    if (meatPageIdx - 1 >= 0)
+                    {
+                        meatPages[meatPageIdx].SetActive(false);
+                        meatPageIdx--;
+                        meatPages[meatPageIdx].SetActive(true);
+                    }
+                }
 
-			if (Input.GetKeyUp(KeyCode.M))
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    if (meatPageIdx + 1 < meatPages.Count)
+                    {
+                        meatPages[meatPageIdx].SetActive(false);
+                        meatPageIdx++;
+                        meatPages[meatPageIdx].SetActive(true);
+                    }
+                }
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    fridge.transform.GetComponent<Fridge>().chooseFood(meatPageIdx);
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.M))
             {
                 menuOn = !menuOn;
                 RecipeBook.SetActive(menuOn);
             }
 
-		}
+        }
 
         /// <summary>
         /// Gets the last non null values for both primary and secondary axis
