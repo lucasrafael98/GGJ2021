@@ -19,7 +19,11 @@ namespace MoreMountains.TopDownEngine
         public GameObject RecipeBook;
         public int pageIdx = 0;
         public List<GameObject> pages = new List<GameObject>();
+		public GameObject MeatMenu;
+		public int meatPageIdx = 0;
+		public List<GameObject> meatPages = new List<GameObject>();
 		public bool menuOn = false;
+		public GameObject fridge;
 		[Header("Status")]
 		/// set this to false to prevent the InputManager from reading input
 		[Tooltip("set this to false to prevent the InputManager from reading input")]
@@ -219,7 +223,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Update()
 		{		
-			if (!menuOn && !IsMobile && InputDetectionActive)
+			if (!menuOn && !IsMobile && InputDetectionActive && !MeatMenu.active)
 			{	
 				SetMovement();	
 				SetSecondaryMovement ();
@@ -250,7 +254,31 @@ namespace MoreMountains.TopDownEngine
                     }
                 }
 
-            }
+            } else if(MeatMenu.active){
+				if (Input.GetKeyUp(KeyCode.W))
+                {
+                    if (meatPageIdx - 1 >= 0)
+                    {
+                        meatPages[meatPageIdx].SetActive(false);
+                        meatPageIdx--;
+                        meatPages[meatPageIdx].SetActive(true);
+                    }
+                }
+
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    if (meatPageIdx + 1 < meatPages.Count)
+                    {
+                        meatPages[meatPageIdx].SetActive(false);
+                        meatPageIdx++;
+                        meatPages[meatPageIdx].SetActive(true);
+                    }
+                }
+
+				if(Input.GetKeyUp(KeyCode.E)){
+					fridge.transform.GetComponent<Fridge>().chooseFood(meatPageIdx);
+				}
+			}
 
 			if (Input.GetKeyUp(KeyCode.M))
             {
