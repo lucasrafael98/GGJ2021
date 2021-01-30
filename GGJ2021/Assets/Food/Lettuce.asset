@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c872dc90631e34b8d43051bdce2430, type: 3}
   m_Name: Lettuce
   m_EditorClassIdentifier: 
-  ItemID: Meat
+  ItemID: Lettuce
   TargetInventoryName: MainInventory
   Usable: 0
   Equippable: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   Description: 
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 21300010, guid: 245e9863fdb205e459b9ded35e58db52, type: 3}
+  Icon: {fileID: 21300016, guid: 082c310ac59e31e4886d543523aa015e, type: 3}
   Prefab: {fileID: 0}
   DropProperties:
     Shape: 0

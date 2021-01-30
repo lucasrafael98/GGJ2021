@@ -75,3 +75,5 @@ MonoBehaviour:
   UseDefaultSoundsIfNull: 1
   _itemList:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
