@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+ 
 namespace Pathfinding {
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_animation_link.php")]
 	public class AnimationLink : NodeLink2 {

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+ 
 namespace Pathfinding.Examples {
 	/// <summary>Helper script in the example scene 'Turn Based'</summary>
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_turn_based_a_i.php")]

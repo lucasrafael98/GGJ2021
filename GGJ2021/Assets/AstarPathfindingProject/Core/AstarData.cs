@@ -6,7 +6,7 @@ using Pathfinding.WindowsStore;
 //using MarkerMetro.Unity.WinLegacy.IO;
 //using MarkerMetro.Unity.WinLegacy.Reflection;
 #endif
-
+ 
 namespace Pathfinding {
 	[System.Serializable]
 	/// <summary>

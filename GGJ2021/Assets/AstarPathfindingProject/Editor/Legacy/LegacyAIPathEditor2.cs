@@ -1,5 +1,5 @@
 using UnityEditor;
-
+ 
 namespace Pathfinding.Legacy {
 	[CustomEditor(typeof(LegacyAIPath))]
 	[CanEditMultipleObjects]

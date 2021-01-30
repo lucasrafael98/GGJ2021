@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+ 
 namespace Pathfinding {
 	[AddComponentMenu("Pathfinding/Modifiers/Alternative Path")]
 	[System.Serializable]

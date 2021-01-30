@@ -1,5 +1,5 @@
 using UnityEditor;
-
+ 
 namespace Pathfinding {
 	[CustomEditor(typeof(RaycastModifier))]
 	[CanEditMultipleObjects]

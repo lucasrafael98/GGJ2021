@@ -1,6 +1,6 @@
 using UnityEditor;
 using UnityEngine;
-
+ 
 namespace Pathfinding {
 	public class GraphEditor : GraphEditorBase {
 		public AstarPathEditor editor;

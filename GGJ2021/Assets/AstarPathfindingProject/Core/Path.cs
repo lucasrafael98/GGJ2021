@@ -1,5 +1,5 @@
 //#define ASTAR_POOL_DEBUG //@SHOWINEDITOR Enables debugging of path pooling. Will log warnings and info messages about paths not beeing pooled correctly.
-
+ 
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;

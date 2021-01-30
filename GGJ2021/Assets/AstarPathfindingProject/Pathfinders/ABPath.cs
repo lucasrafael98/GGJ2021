@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+ 
 namespace Pathfinding {
 	/// <summary>
 	/// Basic path, finds the shortest path from A to B.

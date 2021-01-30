@@ -1,7 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
-
+ 
 namespace Pathfinding {
 	public class AstarUpdateWindow : EditorWindow {
 		static GUIStyle largeStyle;

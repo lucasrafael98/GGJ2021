@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 #endif
 using System.Collections.Generic;
 using System.Linq;
-
+ 
 namespace Pathfinding {
 	/// <summary>Handles update checking for the A* Pathfinding Project</summary>
 	[InitializeOnLoad]

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using Pathfinding.Util;
-
+ 
 namespace Pathfinding {
 	[AddComponentMenu("Pathfinding/Modifiers/Simple Smooth")]
 	[System.Serializable]
