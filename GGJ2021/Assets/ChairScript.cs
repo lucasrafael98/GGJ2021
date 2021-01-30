@@ -23,6 +23,7 @@ public class ChairScript : MonoBehaviour
         if (collision.gameObject.tag.Equals("Client"))
         {
             _isOccupied = true;
+
         }
     }
 
