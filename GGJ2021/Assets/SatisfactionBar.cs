@@ -15,7 +15,10 @@ public class SatisfactionBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value -= 0.0001f;
     }
 
+    public void ChangeSlider(float variation)
+    {
+        slider.value += variation;
+    }
 }
