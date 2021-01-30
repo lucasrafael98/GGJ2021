@@ -15,6 +15,7 @@ namespace MoreMountains.TopDownEngine
 		protected Animator _animator;
 		public Inventory _targetInventory;
 		public CompoundItem _item;
+		public GameObject _itemDisplay;
 
 		GameObject player;
 
@@ -26,20 +27,71 @@ namespace MoreMountains.TopDownEngine
 			_animator = GetComponent<Animator> ();
 			// yolo
 			player = GameObject.FindGameObjectsWithTag("Player")[0];
+			// yolooooooo
+			_item._itemList[0] = null;
+			_item._itemList[1] = null;
+			_item._itemList[2] = null;
 		}
 
 		public virtual void InsertItemInDish()
 		{
+			foreach (var i in _item._itemList)
+			{
+				Debug.Log(i);
+			}
 			InventoryItem item = _targetInventory.Content[0];
 			Debug.Log(item);
-			if(item == null){
+			if(item == null || item.ItemID == "Dish"){
 				return;
 			}
-			_item._itemList.Add(item);
-			_targetInventory.Content[0] = null;
-			player.transform.GetChild(0)
-                .gameObject.GetComponent<SpriteRenderer>()
-                .sprite = null;
+			// *dab* casting time
+			if(((FoodItem)item)._type == FoodItem.Type.Protein){
+				if(_item._itemList[0] != null){
+					InventoryItem temp_item = _item._itemList[0];
+					_targetInventory.AddItem(temp_item, 1);
+				} else {
+					_targetInventory.Content[0] = null;
+					player.transform.GetChild(0)
+						.gameObject.GetComponent<SpriteRenderer>()
+						.sprite = null;
+				}	
+				_item._itemList[0] = item;
+				_itemDisplay.transform.GetChild(0)
+						.GetComponent<SpriteRenderer>()
+						.sprite = _item._itemList[0].Icon;
+			} else if(((FoodItem)item)._type == FoodItem.Type.Carb){
+				if(_item._itemList[1] != null){
+					InventoryItem temp_item = _item._itemList[1];
+					_targetInventory.AddItem(temp_item, 1);
+				} else {
+					_targetInventory.Content[0] = null;
+					player.transform.GetChild(0)
+						.gameObject.GetComponent<SpriteRenderer>()
+						.sprite = null;
+				}	
+				_item._itemList[1] = item;
+				_itemDisplay.transform.GetChild(1)
+						.GetComponent<SpriteRenderer>()
+						.sprite = _item._itemList[1].Icon;
+			} else if(((FoodItem)item)._type == FoodItem.Type.Vegetable){
+				if(_item._itemList[2] != null){
+					InventoryItem temp_item = _item._itemList[2];
+					_targetInventory.AddItem(temp_item, 1);
+				} else {
+					_targetInventory.Content[0] = null;
+					player.transform.GetChild(0)
+						.gameObject.GetComponent<SpriteRenderer>()
+						.sprite = null;
+				}	
+				_item._itemList[2] = item;
+				_itemDisplay.transform.GetChild(2)
+						.GetComponent<SpriteRenderer>()
+						.sprite = _item._itemList[2].Icon;
+			}
+			foreach (var i in _item._itemList)
+			{
+				Debug.Log(i);
+			}
 		}
 
 		public void RetrieveDish()
@@ -48,7 +100,18 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 			_targetInventory.AddItem(_item, 1);
-			_item._itemList.Clear();
+			_item._itemList[0] = null;
+			_item._itemList[1] = null;
+			_item._itemList[2] = null;
+			_itemDisplay.transform.GetChild(0)
+						.GetComponent<SpriteRenderer>()
+						.sprite = null;
+			_itemDisplay.transform.GetChild(1)
+						.GetComponent<SpriteRenderer>()
+						.sprite = null;
+			_itemDisplay.transform.GetChild(2)
+						.GetComponent<SpriteRenderer>()
+						.sprite = null;
 		}
 			
 		public virtual void FindTargetInventory(string targetInventoryName)

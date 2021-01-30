@@ -26,6 +26,7 @@ namespace MoreMountains.TopDownEngine
 		public UnityEvent[] KeyAction;
 		GameObject player;
 		public MoreMountains.InventoryEngine.Inventory _targetInventory;
+		public GameObject _itemDisplay;
         
 		protected GameObject _collidingObject;
 		protected List<int> _keyList;
@@ -47,7 +48,14 @@ namespace MoreMountains.TopDownEngine
 		{
 			_collidingObject = collider.gameObject;
 			base.OnTriggerEnter2D (collider);
+			_itemDisplay.SetActive(true);
 		}
+
+		protected override void OnTriggerExit2D(Collider2D collider)
+		{
+			_itemDisplay.SetActive(false);
+		}
+
 
         protected override void OnTriggerEnter(Collider collider)
         {

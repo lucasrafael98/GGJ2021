@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c872dc90631e34b8d43051bdce2430, type: 3}
   m_Name: Chicken
   m_EditorClassIdentifier: 
-  ItemID: Meat
+  ItemID: Chicken
   TargetInventoryName: MainInventory
   Usable: 0
   Equippable: 0
   Quantity: 1
-  ItemName: Meat
+  ItemName: Chicken
   ShortDescription: 
   Description: 
   CanMoveObject: 1

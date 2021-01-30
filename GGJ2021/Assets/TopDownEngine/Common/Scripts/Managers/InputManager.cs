@@ -24,7 +24,15 @@ namespace MoreMountains.TopDownEngine
         public GameObject MeatMenu;
         public int meatPageIdx = 0;
         public List<GameObject> meatPages = new List<GameObject>();
-		public GameObject fridge;
+		public GameObject VegMenu;
+        public int vegPageIdx = 0;
+        public List<GameObject> vegPages = new List<GameObject>();
+		public GameObject CarbMenu;
+        public int carbPageIdx = 0;
+        public List<GameObject> carbPages = new List<GameObject>();
+		public GameObject meatFridge;
+		public GameObject vegFridge;
+		public GameObject carbFridge;
 		[Header("Status")]
 		/// set this to false to prevent the InputManager from reading input
 		[Tooltip("set this to false to prevent the InputManager from reading input")]
@@ -279,7 +287,59 @@ namespace MoreMountains.TopDownEngine
 
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-                    fridge.transform.GetComponent<Fridge>().chooseFood(meatPageIdx);
+                    meatFridge.transform.GetComponent<Fridge>().chooseFood(meatPageIdx);
+                }
+            } else if (VegMenu.activeSelf)
+            {
+                if (Input.GetKeyUp(KeyCode.W))
+                {
+                    if (vegPageIdx - 1 >= 0)
+                    {
+                        vegPages[vegPageIdx].SetActive(false);
+                        vegPageIdx--;
+                        vegPages[vegPageIdx].SetActive(true);
+                    }
+                }
+
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    if (vegPageIdx + 1 < vegPages.Count)
+                    {
+                        vegPages[vegPageIdx].SetActive(false);
+                        vegPageIdx++;
+                        vegPages[vegPageIdx].SetActive(true);
+                    }
+                }
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    vegFridge.transform.GetComponent<Fridge>().chooseFood(vegPageIdx);
+                }
+            } else if (CarbMenu.activeSelf)
+            {
+                if (Input.GetKeyUp(KeyCode.W))
+                {
+                    if (carbPageIdx - 1 >= 0)
+                    {
+                        carbPages[carbPageIdx].SetActive(false);
+                        carbPageIdx--;
+                        carbPages[carbPageIdx].SetActive(true);
+                    }
+                }
+
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    if (carbPageIdx + 1 < carbPages.Count)
+                    {
+                        carbPages[carbPageIdx].SetActive(false);
+                        carbPageIdx++;
+                        carbPages[carbPageIdx].SetActive(true);
+                    }
+                }
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    carbFridge.transform.GetComponent<Fridge>().chooseFood(carbPageIdx);
                 }
             }
 
