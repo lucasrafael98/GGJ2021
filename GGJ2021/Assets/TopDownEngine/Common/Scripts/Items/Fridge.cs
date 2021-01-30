@@ -18,6 +18,7 @@ public class Fridge : MonoBehaviour{
     }
 
     public void chooseFood(int i){
+        Debug.Log(MeatMenu);
         MeatMenu.SetActive(false);
         meatPages[i].SetActive(false);
 
