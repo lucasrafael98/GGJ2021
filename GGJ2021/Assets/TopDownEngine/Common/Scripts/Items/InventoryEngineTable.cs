@@ -16,6 +16,11 @@ namespace MoreMountains.TopDownEngine
 		public Inventory _targetInventory;
 		public CompoundItem _item;
 
+        public string _expectedRecipe = "Recipe 1"; //Change latter to be done by the application
+
+        public GameObject recipeMnager;
+        public RecipesManager rM;
+
 		GameObject player;
 
 		/// <summary>
@@ -26,6 +31,8 @@ namespace MoreMountains.TopDownEngine
 			_animator = GetComponent<Animator> ();
 			// yolo
 			player = GameObject.FindGameObjectsWithTag("Player")[0];
+
+            rM = recipeMnager.GetComponent<RecipesManager>();
 		}
 
 		public virtual void InsertItemInDish()
@@ -43,7 +50,8 @@ namespace MoreMountains.TopDownEngine
                 .sprite = null;
             _item = item;
 
-		}
+            rM.EvaluateDish(_expectedRecipe, _item._itemList[0].ItemID, _item._itemList[1].ItemID, _item._itemList[2].ItemID);
+        }
 		
 			
 		public virtual void FindTargetInventory(string targetInventoryName)

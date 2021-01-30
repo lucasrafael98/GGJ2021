@@ -96,7 +96,7 @@ namespace MoreMountains.TopDownEngine
 
 		public void RetrieveDish()
 		{
-			if(_item._itemList.Count < 1){
+			if(_item._itemList.Count < 1 || (_item._itemList[0] == null || _item._itemList[1] == null || _item._itemList[2] == null)){
 				return;
 			}
 			_targetInventory.AddItem(_item, 1);
