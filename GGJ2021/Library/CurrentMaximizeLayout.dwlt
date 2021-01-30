@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 579, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 579, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 46143
+  controlID: 48391
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1644
     height: 947
-  m_MinSize: {x: 303, y: 342}
-  m_MaxSize: {x: 8003, y: 8042}
+  m_MinSize: {x: 303, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 46144
+  controlID: 48392
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 46117
+  controlID: 48393
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3afbffffe64e0000
+      m_ExpandedIDs: 3afbffffe64e0000184f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -310,9 +310,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.6122236, y: 0.5162496, z: -2.7580428}
+    m_Target: {x: 8.144743, y: 0.71552396, z: -4.2868595}
     speed: 2
-    m_Value: {x: 6.6122236, y: 0.5162496, z: -2.7580428}
+    m_Value: {x: 8.144743, y: 0.71552396, z: -4.2868595}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -362,9 +362,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.4707327
+    m_Target: 6.2267714
     speed: 2
-    m_Value: 5.4707327
+    m_Value: 6.2267714
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AnimatorControllerTool
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -408,16 +408,16 @@ MonoBehaviour:
     y: 669
     width: 1644
     height: 278
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
   - {fileID: 11}
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 2
-  m_LastSelected: 3
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -457,19 +457,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/characters/cornelius
+    - Assets/characters/world
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/characters/cornelius
+  - Assets/characters/world
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\gamejam\GGJ2021-main\GGJ2021\GGJ2021
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 90520000
-    m_LastClickedID: 21136
+    scrollPos: {x: 0, y: 355}
+    m_SelectedIDs: 8ced0000
+    m_LastClickedID: 60812
     m_ExpandedIDs: 000000007252000074520000785200007c520000825200008452000086520000885200008a5200008c5200008e5200009052000096520000a05200006a53000076a7000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -523,8 +523,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ccb10000
-    m_LastClickedInstanceID: 45516
+    m_SelectedInstanceIDs: 1efbffff
+    m_LastClickedInstanceID: -1250
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000061d01000000000072500000b84f0000
     m_RenameOverlay:
@@ -872,7 +872,7 @@ MonoBehaviour:
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 20198
+  m_LastInspectedObjectInstanceID: -1250
   m_LastVerticalScrollValue: 0
 --- !u!114 &16
 MonoBehaviour:
