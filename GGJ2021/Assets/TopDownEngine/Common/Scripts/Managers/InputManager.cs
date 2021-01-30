@@ -17,8 +17,6 @@ namespace MoreMountains.TopDownEngine
 	[AddComponentMenu("TopDown Engine/Managers/Input Manager")]
 	public class InputManager : MMSingleton<InputManager>
     {
-        public Dictionary<string, string[]> Recipes;
-
         public GameObject RecipeBook;
         public int pageIdx = 0;
         public List<GameObject> pages = new List<GameObject>();
@@ -120,12 +118,6 @@ namespace MoreMountains.TopDownEngine
 		protected string _axisSecondaryVertical;
 		protected string _axisShoot;
         protected string _axisShootSecondary;
-
-
-        protected void populateRecipes()
-        {
-            Recipes = new Dictionary<string, string[]>();
-        }
 
         /// <summary>
         /// On Start we look for what mode to use, and initialize our axis and buttons

@@ -2,6 +2,7 @@
 using System.Collections;
 using MoreMountains.Tools;
 using System;
+using System.Collections.Generic;
 
 namespace MoreMountains.InventoryEngine
 {	
@@ -13,9 +14,28 @@ namespace MoreMountains.InventoryEngine
 	public class FoodItem : InventoryItem 
 	{
 		public enum Type{Vegetable, Protein, Carb}
-		public enum Attr{Spicy, Juicy, Dry, Sweet, Fruit}
+		public enum Attr{Spicy, Juicy, Dry, Sweet, Fruity}
+
+        public static List<string> AttrDictionary = new List<string>()
+        {
+            "Spicy" ,
+           "Juicy" ,
+            "Dry" ,
+           "Sweet" ,
+            "Fruity" 
+
+        };
 
 		public Type _type;
 		public Attr _attr;
+
+        public FoodItem(string foodName, Type type, Attr attr)
+        {
+            ItemID = foodName;
+            _type = type;
+            _attr = attr;
+
+        }
+
 	}
 }
