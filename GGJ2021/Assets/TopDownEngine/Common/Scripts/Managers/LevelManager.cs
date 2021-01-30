@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using MoreMountains.Tools;
 
-
 namespace MoreMountains.TopDownEngine
 {	
 	/// <summary>
@@ -79,15 +78,24 @@ namespace MoreMountains.TopDownEngine
 
 		/// the elapsed time since the start of the level
 		public TimeSpan RunningTime { get { return DateTime.UtcNow - _started ;}}
-        
+
+        [Header("Client Generation")]
+        public GameObject clientPrefab;
+        public GameObject spawner;
+        public int maxClients = 4;
+        public float clientSpawnRate = 5f;
         // private stuff
         public List<CheckPoint> Checkpoints { get; protected set; }
         public List<Character> Players { get; protected set; }
+
+        protected float _nextSpawnTime;
+        protected int _numberOfClients = 0;
 
         protected DateTime _started;
 	    protected int _savedPoints;
         protected Collider _collider;
         protected Vector3 _initialSpawnPointPosition;
+
 		
 		/// <summary>
 		/// On awake, instantiates the player
@@ -106,7 +114,7 @@ namespace MoreMountains.TopDownEngine
         {
             BoundsCollider = _collider;
             InstantiatePlayableCharacters();
-
+            _nextSpawnTime = Time.time + clientSpawnRate;
             if (UseLevelBounds)
             {
                 MMCameraEvent.Trigger(MMCameraEventTypes.SetConfiner, null, BoundsCollider);
@@ -138,6 +146,22 @@ namespace MoreMountains.TopDownEngine
             MMCameraEvent.Trigger(MMCameraEventTypes.SetTargetCharacter, Players[0]);
             MMCameraEvent.Trigger(MMCameraEventTypes.StartFollowing);
             MMGameEvent.Trigger("CameraBound");
+        }
+
+        protected virtual void FixedUpdate()
+        {
+            if (Time.time > _nextSpawnTime)
+            {
+                //do stuff here (like instantiate)
+                if(_numberOfClients < maxClients)
+                {
+                    Instantiate(clientPrefab, new Vector2(spawner.transform.position.x, spawner.transform.position.y), Quaternion.identity);
+                    _numberOfClients++;
+                }
+
+                //increment next_spawn_time
+                _nextSpawnTime += clientSpawnRate;
+            }
         }
 
         /// <summary>
