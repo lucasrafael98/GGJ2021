@@ -1,5 +1,5 @@
 using UnityEngine;
-
+ 
 namespace Pathfinding {
 	/// <summary>
 	/// Base for all path modifiers.

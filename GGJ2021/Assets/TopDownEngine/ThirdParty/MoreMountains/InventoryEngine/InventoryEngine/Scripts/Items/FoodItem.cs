@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 
 namespace MoreMountains.InventoryEngine
-{	
+{	 
 	[CreateAssetMenu(fileName = "FoodItem", menuName = "MoreMountains/InventoryEngine/FoodItem", order = 0)]
 	[Serializable]
 	/// <summary>

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+ 
 namespace Pathfinding {
 	/// <summary>
 	/// Defines a shape for a Pathfinding.GraphUpdateObject.

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEditor;
-
+ 
 namespace Pathfinding {
 	[CustomGraphEditor(typeof(PointGraph), "Point Graph")]
 	public class PointGraphEditor : GraphEditor {

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+ 
 // Empty namespace declaration to avoid errors in the free version
 // Which does not have any classes in the RVO namespace
 namespace Pathfinding.RVO {}

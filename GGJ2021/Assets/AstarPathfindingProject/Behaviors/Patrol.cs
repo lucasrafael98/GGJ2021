@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+ 
 namespace Pathfinding {
 	/// <summary>
 	/// Simple patrol behavior.

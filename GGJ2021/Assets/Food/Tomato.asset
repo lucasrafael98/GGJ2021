@@ -16,12 +16,12 @@ MonoBehaviour:
   TargetInventoryName: MainInventory
   Usable: 0
   Equippable: 0
-  Quantity: 1
+  Quantity: 0
   ItemName: Tomato
   ShortDescription: 
   Description: 
-  CanMoveObject: 1
-  CanSwapObject: 1
+  CanMoveObject: 0
+  CanSwapObject: 0
   Icon: {fileID: 21300004, guid: 082c310ac59e31e4886d543523aa015e, type: 3}
   Prefab: {fileID: 0}
   DropProperties:
@@ -65,13 +65,13 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 1
+  MaximumStack: 0
   ItemClass: 0
   TargetEquipmentInventoryName: 
   EquippedSound: {fileID: 0}
   UsedSound: {fileID: 0}
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
-  UseDefaultSoundsIfNull: 1
+  UseDefaultSoundsIfNull: 0
   _type: 0
-  _attr: 1
+  _attr: 0

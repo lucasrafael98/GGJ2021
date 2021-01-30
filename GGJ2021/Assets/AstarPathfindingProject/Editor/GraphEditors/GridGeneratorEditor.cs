@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using Pathfinding.Serialization;
-
+ 
 namespace Pathfinding {
 	using Pathfinding.Util;
 

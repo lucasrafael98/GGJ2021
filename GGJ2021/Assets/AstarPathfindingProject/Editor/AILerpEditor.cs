@@ -1,6 +1,6 @@
 using UnityEditor;
 using UnityEngine;
-
+ 
 namespace Pathfinding {
 	[CustomEditor(typeof(AILerp), true)]
 	[CanEditMultipleObjects]

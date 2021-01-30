@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
-
+ 
 namespace MoreMountains.TopDownEngine
 {	
 	/// <summary>
@@ -313,6 +313,7 @@ namespace MoreMountains.TopDownEngine
 
                 if (Input.GetKeyUp(KeyCode.E))
                 {
+					Debug.Log("?");
                     vegFridge.transform.GetComponent<Fridge>().chooseFood(vegPageIdx);
                 }
             } else if (CarbMenu.activeSelf)

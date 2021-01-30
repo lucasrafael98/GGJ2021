@@ -5,7 +5,7 @@ using Pathfinding;
 #if UNITY_5_5_OR_NEWER
 using UnityEngine.Profiling;
 #endif
-
+ 
 #if NETFX_CORE
 using Thread = Pathfinding.WindowsStore.Thread;
 #else

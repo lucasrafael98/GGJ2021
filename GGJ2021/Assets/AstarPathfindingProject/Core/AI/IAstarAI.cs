@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+ 
 namespace Pathfinding {
 	/// <summary>
 	/// Common interface for all movement scripts in the A* Pathfinding Project.
