@@ -9,30 +9,39 @@ using UnityEngine.PlayerLoop;
 public class RecipesManager : MonoBehaviour
 {
     public static Dictionary<string, FoodItem[]> RecipeList = new Dictionary<string, FoodItem[]>();
-    public static List<FoodItem[]> Ingredients = new List<FoodItem[]>();
+    public static List<FoodItem> ProteinIngredients = new List<FoodItem>();
+    public static List<FoodItem> CarbIngredients = new List<FoodItem>();
+    public static List<FoodItem> VegetablesIngredients = new List<FoodItem>();
     public GameObject satisfactionManager;
+
+    public GameObject ProteinRef, CarbRef, VegetableRef;
 
     // Start is called before the first frame update
     void Start()
     {
-        Ingredients.Add(new []{new FoodItem("A1", FoodItem.Type.Protein, FoodItem.Attr.Dry),
-            new FoodItem("A2", FoodItem.Type.Protein, FoodItem.Attr.Spicy),
-            new FoodItem("A1", FoodItem.Type.Protein, FoodItem.Attr.Sweet)});    //First category
+        ProteinIngredients.AddRange(ProteinRef.GetComponent<Fridge>().items);
+        CarbIngredients.AddRange(CarbRef.GetComponent<Fridge>().items);
+        VegetablesIngredients.AddRange(VegetableRef.GetComponent<Fridge>().items);
 
 
-        Ingredients.Add(new[]
-        {
-            new FoodItem("B1", FoodItem.Type.Carb, FoodItem.Attr.Fruity),
-            new FoodItem("B2", FoodItem.Type.Carb, FoodItem.Attr.Juicy)
-        });             //Sec category
+        //Ingredients.Add(new []{new FoodItem("A1", FoodItem.Type.Protein, FoodItem.Attr.Dry),
+        //    new FoodItem("A2", FoodItem.Type.Protein, FoodItem.Attr.Spicy),
+        //    new FoodItem("A1", FoodItem.Type.Protein, FoodItem.Attr.Sweet)});    //First category
 
 
-        Ingredients.Add(new []{
-            new FoodItem("C1", FoodItem.Type.Vegetable, FoodItem.Attr.Dry)});              //Sec category
+        //Ingredients.Add(new[]
+        //{
+        //    new FoodItem("B1", FoodItem.Type.Carb, FoodItem.Attr.Fruity),
+        //    new FoodItem("B2", FoodItem.Type.Carb, FoodItem.Attr.Juicy)
+        //});             //Sec category
 
-        RecipeList.Add("Recipe1", new []{Ingredients[0][0], Ingredients[1][0], Ingredients[2][0]});
-        RecipeList.Add("Recipe2", new[] { Ingredients[0][1], Ingredients[1][0], Ingredients[2][0] });
-        RecipeList.Add("Recipe3", new[] { Ingredients[0][0], Ingredients[1][1], Ingredients[2][0] });
+
+        //Ingredients.Add(new []{
+        //    new FoodItem("C1", FoodItem.Type.Vegetable, FoodItem.Attr.Dry)});              //Sec category
+
+        RecipeList.Add("Recipe1", new []{ProteinIngredients[0], CarbIngredients[0], VegetablesIngredients[0]});
+        RecipeList.Add("Recipe2", new[] { ProteinIngredients[1], CarbIngredients[0], VegetablesIngredients[0] });
+        RecipeList.Add("Recipe3", new[] { ProteinIngredients[0], CarbIngredients[1], VegetablesIngredients[0] });
 
         //TestMethod1();
 
