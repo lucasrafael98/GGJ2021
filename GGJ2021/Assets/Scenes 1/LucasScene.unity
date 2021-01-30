@@ -289,6 +289,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &49506987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49506983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d4bda93d4e0d74095ef6f055e5a0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestOn: 0
+  RequestImage: {fileID: 851310437}
 --- !u!1 &49805114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2656,6 +2670,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805043424}
   m_CullTransparentMesh: 0
+--- !u!1 &851310437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8285244548479815024, guid: 25b684340718926438b4df6fb14b3135,
+    type: 3}
+  m_PrefabInstance: {fileID: 8225727136138346635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &952257991 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5300640667970413599, guid: bf630e25f2aecd141aff1a29eca88d20,
@@ -8007,6 +8027,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674480247865118518, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195705438080248642, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543055110097505804, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402513792594977713, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152216059146654972, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368885470048935910, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -683914943
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368885470048935910, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9019790578921272296, guid: 25b684340718926438b4df6fb14b3135,
         type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Chair
   - Client
+  - Request
   layers:
   - Default
   - TransparentFX

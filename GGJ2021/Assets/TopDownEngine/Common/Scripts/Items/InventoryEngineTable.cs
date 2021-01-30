@@ -4,23 +4,26 @@ using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
 using System.Collections.Generic;
+using UnityEngine.PlayerLoop;
+using Random = System.Random;
 
 namespace MoreMountains.TopDownEngine
 {
     /// <summary>
     /// Add this component to an object in your scene to have it act like a chest. You'll need a key operated zone to open it, and item picker(s) on it to fill its contents
     /// </summary>
-    [AddComponentMenu("TopDown Engine/Items/InventoryEngineDish")]
+    [AddComponentMenu("TopDown Engine/Items/InventoryEngineTable")]
     public class InventoryEngineTable : MonoBehaviour 
 	{
 		protected Animator _animator;
 		public Inventory _targetInventory;
 		public CompoundItem _item;
 
-        private string _expectedRecipe = "Recipe1"; //Change latter to be done by the application
 
         public GameObject recipeMnager;
         public RecipesManager rM;
+
+        private string _expectedRecipe = "Recipe1"; //Change latter to be done by the application
 
 		GameObject player;
 
@@ -73,5 +76,7 @@ namespace MoreMountains.TopDownEngine
 				}
 			}
 		}
+
+        
 	}
 }

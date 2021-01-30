@@ -23,25 +23,10 @@ public class RecipesManager : MonoBehaviour
         CarbIngredients.AddRange(CarbRef.GetComponent<Fridge>().items);
         VegetablesIngredients.AddRange(VegetableRef.GetComponent<Fridge>().items);
 
-
-        //Ingredients.Add(new []{new FoodItem("A1", FoodItem.Type.Protein, FoodItem.Attr.Dry),
-        //    new FoodItem("A2", FoodItem.Type.Protein, FoodItem.Attr.Spicy),
-        //    new FoodItem("A1", FoodItem.Type.Protein, FoodItem.Attr.Sweet)});    //First category
-
-
-        //Ingredients.Add(new[]
-        //{
-        //    new FoodItem("B1", FoodItem.Type.Carb, FoodItem.Attr.Fruity),
-        //    new FoodItem("B2", FoodItem.Type.Carb, FoodItem.Attr.Juicy)
-        //});             //Sec category
-
-
-        //Ingredients.Add(new []{
-        //    new FoodItem("C1", FoodItem.Type.Vegetable, FoodItem.Attr.Dry)});              //Sec category
-
         RecipeList.Add("Recipe1", new[] { ProteinIngredients[0], CarbIngredients[0], VegetablesIngredients[0] });
         RecipeList.Add("Recipe2", new[] { ProteinIngredients[1], CarbIngredients[0], VegetablesIngredients[0] });
         RecipeList.Add("Recipe3", new[] { ProteinIngredients[0], CarbIngredients[1], VegetablesIngredients[0] });
+        RecipeList.Add("Recipe4", new []{ ProteinIngredients[1], CarbIngredients[1], VegetablesIngredients[0]});
 
         //TestMethod1();
 

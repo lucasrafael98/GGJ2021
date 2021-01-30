@@ -3,6 +3,7 @@ using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MoreMountains.TopDownEngine
 {
@@ -35,10 +36,10 @@ namespace MoreMountains.TopDownEngine
 
 		public virtual void InsertItemInDish()
 		{
-			foreach (var i in _item._itemList)
-			{
-				Debug.Log(i);
-			}
+			//foreach (var i in _item._itemList)
+			//{
+			//	Debug.Log(i);
+			//}
 			InventoryItem item = _targetInventory.Content[0];
 			Debug.Log(item);
 			if(item == null || item.ItemID == "Dish"){
@@ -96,7 +97,7 @@ namespace MoreMountains.TopDownEngine
 
 		public void RetrieveDish()
 		{
-			if(_item._itemList.Count < 1){
+            if (_item._itemList.All(x => x == null)){
 				return;
 			}
 			_targetInventory.AddItem(_item, 1);
