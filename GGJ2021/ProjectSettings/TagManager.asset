@@ -11,6 +11,7 @@ TagManager:
   - NoMask
   - RecipeBook
   - Page
+  - RecipeManager
   layers:
   - Default
   - TransparentFX

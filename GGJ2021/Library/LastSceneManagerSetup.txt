@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/LucasScene.unity
+- path: Assets/Scenes/MScene2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

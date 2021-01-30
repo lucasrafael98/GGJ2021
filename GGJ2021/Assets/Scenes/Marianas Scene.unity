@@ -1474,7 +1474,15 @@ MonoBehaviour:
   meatPages:
   - {fileID: 772435903}
   - {fileID: 1128617876}
-  fridge: {fileID: 1942145479}
+  VegMenu: {fileID: 0}
+  vegPageIdx: 0
+  vegPages: []
+  CarbMenu: {fileID: 0}
+  carbPageIdx: 0
+  carbPages: []
+  meatFridge: {fileID: 0}
+  vegFridge: {fileID: 0}
+  carbFridge: {fileID: 0}
   InputDetectionActive: 1
   PlayerID: Player1
   AutoMobileDetection: 1
@@ -2977,6 +2985,7 @@ MonoBehaviour:
   KeyID: 
   KeyAction: []
   _targetInventory: {fileID: 1198937753}
+  _itemDisplay: {fileID: 0}
 --- !u!61 &1332853137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3513,6 +3522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetInventory: {fileID: 1198937753}
   _item: {fileID: 11400000, guid: 88efd7129ea65bf42802d538897aa3aa, type: 2}
+  _itemDisplay: {fileID: 0}
 --- !u!1 &1609188599
 GameObject:
   m_ObjectHideFlags: 0
@@ -5082,48 +5092,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126879282}
   m_CullTransparentMesh: 0
---- !u!1 &2132701228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2132701229}
-  - component: {fileID: 2132701230}
-  m_Layer: 0
-  m_Name: RecipeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2132701229
+--- !u!4 &2132701229 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+    type: 3}
+  m_PrefabInstance: {fileID: 2805402418934430764}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132701228}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 254338589}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2132701230
-MonoBehaviour:
+--- !u!1001 &2805402418934430764
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132701228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c33348a7d3b8ab4f9012463a423daaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  satisfactionManager: {fileID: 1987456947}
-  FridgeRef: {fileID: 1942145479}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 254338589}
+    m_Modifications:
+    - target: {fileID: 2805402417574038528, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_Name
+      value: RecipeManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038529, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805402417574038530, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: satisfactionManager
+      value: 
+      objectReference: {fileID: 1987456947}
+    - target: {fileID: 2805402417574038530, guid: 975bc0823a58228479093b8acaf8eced,
+        type: 3}
+      propertyPath: FridgeRef
+      value: 
+      objectReference: {fileID: 1942145479}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 975bc0823a58228479093b8acaf8eced, type: 3}
