@@ -8,7 +8,7 @@ using UnityEngine.PlayerLoop;
 using Random = System.Random;
 
 namespace MoreMountains.TopDownEngine
-{
+{ 
     /// <summary>
     /// Add this component to an object in your scene to have it act like a chest. You'll need a key operated zone to open it, and item picker(s) on it to fill its contents
     /// </summary>

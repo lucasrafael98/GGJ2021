@@ -19,7 +19,7 @@ namespace MoreMountains.TopDownEngine
 		public GameObject _itemDisplay;
 
 		GameObject player;
-
+ 
 		/// <summary>
 		/// On start we grab our animator and list of item pickers
 		/// </summary>
