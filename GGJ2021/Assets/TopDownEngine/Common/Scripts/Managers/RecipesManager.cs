@@ -5,6 +5,7 @@ using System.Threading;
 using MoreMountains.InventoryEngine;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class RecipesManager : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class RecipesManager : MonoBehaviour
     public static List<FoodItem> CarbIngredients = new List<FoodItem>();
     public static List<FoodItem> VegetablesIngredients = new List<FoodItem>();
     public GameObject satisfactionManager;
-
+    private float timedAtTime;
     public GameObject ProteinRef, CarbRef, VegetableRef;
+    public GameObject NotificationBar;
 
     // Start is called before the first frame update
     void Start()
@@ -34,9 +36,12 @@ public class RecipesManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (NotificationBar.activeSelf && Time.time > timedAtTime)
+        {
+            NotificationBar.SetActive(false);
+        }
     }
 
     public void EvaluateDish(string recipeName, string ing1, string ing2, string ing3)
@@ -46,24 +51,34 @@ public class RecipesManager : MonoBehaviour
         string hint = "";
         if (!ing1.Equals(recipe[0].ItemID))
         {
-            hint += "The protein used to be " + FoodItem.AttrDictionary[(int)recipe[0]._attr] + "\n";
+            hint += "The protein used to be " + FoodItem.AttrDictionary[(int)recipe[0]._attr] + ". ";
         }
         else right++;
 
         if (!ing2.Equals(recipe[1].ItemID))
         {
-            hint += "The carb used to be " + FoodItem.AttrDictionary[(int)recipe[1]._attr] + "\n";
+            hint += "The carb used to be " + FoodItem.AttrDictionary[(int)recipe[1]._attr] + ". ";
         }
         else right++;
 
         if (!ing3.Equals(recipe[2].ItemID))
         {
-            hint += "The vegetable used to be " + FoodItem.AttrDictionary[(int)recipe[2]._attr] + "\n";
+            hint += "The vegetable used to be " + FoodItem.AttrDictionary[(int)recipe[2]._attr] + ". ";
         }
         else right++;
 
         Debug.Log("HINTS: " + hint);
         Debug.Log("You got " + right + " ingredients right!");
+
+        if (!hint.Equals(""))
+        {
+            var text = NotificationBar.GetComponentInChildren<Text>();
+            text.text = hint;
+            NotificationBar.SetActive(true);
+
+            timedAtTime = Time.time + 5f;
+        }
+
 
         var percentage = 0f;
         if (right == 3) percentage = 0.10f;
