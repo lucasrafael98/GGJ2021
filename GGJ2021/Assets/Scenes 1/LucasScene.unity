@@ -351,8 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d4bda93d4e0d74095ef6f055e5a0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestOn: 0
   RequestImage: {fileID: 851310437}
+  plates: []
+  tableShitIdk: {fileID: 0}
 --- !u!1001 &73077822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,8 +547,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d4bda93d4e0d74095ef6f055e5a0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestOn: 0
   RequestImage: {fileID: 1866015708}
+  plates: []
+  tableShitIdk: {fileID: 0}
 --- !u!114 &104646481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2212,7 +2214,9 @@ MonoBehaviour:
   _targetInventory: {fileID: 1198937753}
   _item: {fileID: 0}
   recipeMnager: {fileID: 742255956}
+  PedidoImage: {fileID: 535316777}
   rM: {fileID: 742255957}
+  _expectedRecipe: Recipe1
 --- !u!58 &524775865
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3075,6 +3079,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8328397298418806040, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: tableShitIdk
+      value: 
+      objectReference: {fileID: 524775863}
     - target: {fileID: 9019790578921272296, guid: 25b684340718926438b4df6fb14b3135,
         type: 3}
       propertyPath: m_Name
@@ -3492,7 +3501,9 @@ MonoBehaviour:
   _targetInventory: {fileID: 1198937753}
   _item: {fileID: 0}
   recipeMnager: {fileID: 742255956}
+  PedidoImage: {fileID: 1866015708}
   rM: {fileID: 742255957}
+  _expectedRecipe: Recipe1
 --- !u!61 &799250160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3699,8 +3710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d4bda93d4e0d74095ef6f055e5a0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestOn: 0
   RequestImage: {fileID: 535316777}
+  plates: []
+  tableShitIdk: {fileID: 0}
 --- !u!212 &863748477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4854,6 +4866,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8328397298418806040, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: tableShitIdk
+      value: 
+      objectReference: {fileID: 799250158}
     - target: {fileID: 9019790578921272296, guid: 25b684340718926438b4df6fb14b3135,
         type: 3}
       propertyPath: m_Name
@@ -8312,7 +8329,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -9390,6 +9407,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8328397298418806040, guid: 25b684340718926438b4df6fb14b3135,
+        type: 3}
+      propertyPath: tableShitIdk
+      value: 
+      objectReference: {fileID: 8225727136138346636}
     - target: {fileID: 9019790578921272296, guid: 25b684340718926438b4df6fb14b3135,
         type: 3}
       propertyPath: m_Name
@@ -9439,7 +9461,9 @@ MonoBehaviour:
   _targetInventory: {fileID: 1198937753}
   _item: {fileID: 0}
   recipeMnager: {fileID: 742255956}
+  PedidoImage: {fileID: 851310437}
   rM: {fileID: 742255957}
+  _expectedRecipe: Recipe1
 --- !u!61 &8225727136138346639
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -20,10 +20,10 @@ namespace MoreMountains.TopDownEngine
 		public CompoundItem _item;
 
 
-        public GameObject recipeMnager;
+        public GameObject recipeMnager, PedidoImage;
         public RecipesManager rM;
 
-        private string _expectedRecipe = "Recipe1"; //Change latter to be done by the application
+        public string _expectedRecipe = "Recipe1"; //Change latter to be done by the application
 
 		GameObject player;
 
@@ -57,6 +57,10 @@ namespace MoreMountains.TopDownEngine
             var ing2 = _item._itemList[1]?.ItemID ?? String.Empty;
             var ing3 = _item._itemList[2]?.ItemID ?? String.Empty;
 			rM.EvaluateDish(_expectedRecipe, ing1, ing2, ing3);
+
+			PedidoImage.SetActive(false);
+
+
 
 		}
 		
