@@ -17,6 +17,8 @@ namespace MoreMountains.TopDownEngine
 		public Inventory _targetInventory;
 		public CompoundItem _item;
 		public GameObject _itemDisplay;
+		public AudioClip sfx_open;
+    	public AudioClip sfx_close;
 
 		GameObject player;
  
@@ -93,6 +95,13 @@ namespace MoreMountains.TopDownEngine
 			{
 				Debug.Log(i);
 			}
+			GameObject temporaryAudioHost = new GameObject("TempAudio");
+			temporaryAudioHost.transform.position = gameObject.transform.position;
+			AudioSource audioSource = temporaryAudioHost.AddComponent<AudioSource>() as AudioSource;
+			audioSource.clip = sfx_open;
+			audioSource.volume = 1f;
+			audioSource.Play();
+			Destroy(temporaryAudioHost, sfx_open.length);
 		}
 
 		public void RetrieveDish()
@@ -113,6 +122,13 @@ namespace MoreMountains.TopDownEngine
 			_itemDisplay.transform.GetChild(2)
 						.GetComponent<SpriteRenderer>()
 						.sprite = null;
+			GameObject temporaryAudioHost = new GameObject("TempAudio");
+			temporaryAudioHost.transform.position = gameObject.transform.position;
+			AudioSource audioSource = temporaryAudioHost.AddComponent<AudioSource>() as AudioSource;
+			audioSource.clip = sfx_close;
+			audioSource.volume = 1f;
+			audioSource.Play();
+			Destroy(temporaryAudioHost, sfx_close.length);
 		}
 			
 		public virtual void FindTargetInventory(string targetInventoryName)

@@ -116,6 +116,7 @@ namespace MoreMountains.TopDownEngine
 		protected virtual void Update()
 		{
 			CheckIfGrounded ();
+            Grounded = true;
 			HandleFriction ();
 			DetermineDirection ();
 		}

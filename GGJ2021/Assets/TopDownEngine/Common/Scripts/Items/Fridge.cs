@@ -11,10 +11,19 @@ public class Fridge : MonoBehaviour{
     public List<FoodItem> items = new List<FoodItem>();
     public Inventory inventory;
     public GameObject player;
+    public AudioClip sfx_open;
+    public AudioClip sfx_close;
 
     public void enableMenu(){
         MeatMenu.SetActive(true);
         meatPages[0].SetActive(true);
+        GameObject temporaryAudioHost = new GameObject("TempAudio");
+        temporaryAudioHost.transform.position = gameObject.transform.position;
+        AudioSource audioSource = temporaryAudioHost.AddComponent<AudioSource>() as AudioSource;
+        audioSource.clip = sfx_open;
+        audioSource.volume = 1f;
+        audioSource.Play();
+        Destroy(temporaryAudioHost, sfx_open.length);
     }
 
     public void chooseFood(int i){
@@ -26,5 +35,12 @@ public class Fridge : MonoBehaviour{
         player.transform.GetChild(0)
                 .gameObject.GetComponent<SpriteRenderer>()
                 .sprite = items[i].Icon;
+        GameObject temporaryAudioHost = new GameObject("TempAudio");
+        temporaryAudioHost.transform.position = gameObject.transform.position;
+        AudioSource audioSource = temporaryAudioHost.AddComponent<AudioSource>() as AudioSource;
+        audioSource.clip = sfx_close;
+        audioSource.volume = 1f;
+        audioSource.Play();
+        Destroy(temporaryAudioHost, sfx_close.length);
     }
 }

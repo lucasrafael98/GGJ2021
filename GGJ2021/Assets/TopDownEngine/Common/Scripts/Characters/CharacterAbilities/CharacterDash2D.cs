@@ -110,6 +110,7 @@ namespace MoreMountains.TopDownEngine
             _controller.FreeMovement = false;
             DashFeedback?.PlayFeedbacks(this.transform.position);
             PlayAbilityStartFeedbacks();
+            PlayAbilityStartSfx();
 
             switch (DashMode)
             {
