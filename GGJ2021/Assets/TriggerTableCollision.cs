@@ -14,7 +14,7 @@ public class TriggerTableCollision : MonoBehaviour
     public List<Sprite> plates;
 
     public GameObject tableShitIdk;
-
+    public GameObject myClient;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +41,15 @@ public class TriggerTableCollision : MonoBehaviour
                 tableShitIdk.GetComponentInChildren<InventoryEngineTable>()._expectedRecipe = _expectedRecipe;
             }
 
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (myClient == null && collision.gameObject.tag.Equals("Client") && !collision.gameObject.GetComponent<ClientScript>().isMoving())
+        {
+            Debug.Log("LMAO SO BUGS " + collision.gameObject.GetComponent<ClientScript>().isMoving());
+            myClient = collision.gameObject;
         }
     }
 

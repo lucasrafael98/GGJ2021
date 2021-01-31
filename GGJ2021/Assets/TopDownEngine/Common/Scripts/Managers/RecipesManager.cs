@@ -36,7 +36,7 @@ public class RecipesManager : MonoBehaviour
         CarbIngredients.AddRange(CarbRef.GetComponent<Fridge>().items);
         VegetablesIngredients.AddRange(VegetableRef.GetComponent<Fridge>().items);
 
-
+        RecipeList = new Dictionary<string, FoodItem[]>();
         RecipeList.Add("Recipe1", new[] { ProteinIngredients[0], CarbIngredients[0], VegetablesIngredients[0] });
         RecipeList.Add("Recipe2", new[] { ProteinIngredients[1], CarbIngredients[0], VegetablesIngredients[0] });
         RecipeList.Add("Recipe3", new[] { ProteinIngredients[0], CarbIngredients[1], VegetablesIngredients[0] });

@@ -6,6 +6,7 @@ using MoreMountains.InventoryEngine;
 using System.Collections.Generic;
 using UnityEngine.PlayerLoop;
 using Random = System.Random;
+using Pathfinding;
 
 namespace MoreMountains.TopDownEngine
 { 
@@ -20,10 +21,14 @@ namespace MoreMountains.TopDownEngine
 		public CompoundItem _item;
 
 
-        public GameObject recipeMnager, PedidoImage;
+        public GameObject recipeMnager, PedidoImage, door;
         public RecipesManager rM;
 
         public string _expectedRecipe = "Recipe1"; //Change latter to be done by the application
+
+		public float waitingLeaveTime = 3f;
+
+		private float _nextLeaveTime = 0f;
 
 		GameObject player;
 
@@ -36,6 +41,16 @@ namespace MoreMountains.TopDownEngine
 			// yolo
 			player = GameObject.FindGameObjectsWithTag("Player")[0];
             rM = recipeMnager.GetComponent<RecipesManager>();
+		}
+
+		protected virtual void FixedUpdate()
+		{
+			if (_nextLeaveTime != 0f && Time.time > _nextLeaveTime)
+			{
+				GetComponentInParent<TriggerTableCollision>().myClient.GetComponent<AIDestinationSetter>().target = door.transform;
+				GetComponentInParent<TriggerTableCollision>().myClient = null;
+				_nextLeaveTime = 0f;
+			}
 		}
 
 		public virtual void InsertItemInDish()
@@ -57,6 +72,8 @@ namespace MoreMountains.TopDownEngine
             var ing2 = _item._itemList[1]?.ItemID ?? String.Empty;
             var ing3 = _item._itemList[2]?.ItemID ?? String.Empty;
 			rM.EvaluateDish(_expectedRecipe, ing1, ing2, ing3);
+
+			_nextLeaveTime = Time.time + waitingLeaveTime;
 
 			PedidoImage.SetActive(false);
 

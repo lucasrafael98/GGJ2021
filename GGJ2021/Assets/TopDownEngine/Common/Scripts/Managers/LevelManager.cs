@@ -92,7 +92,7 @@ namespace MoreMountains.TopDownEngine
         public List<Character> Players { get; protected set; }
 
         protected float _nextSpawnTime;
-        protected int _numberOfClients = 0;
+        public int numberOfClients = 0;
 
         protected DateTime _started;
 	    protected int _savedPoints;
@@ -155,10 +155,10 @@ namespace MoreMountains.TopDownEngine
             if (Time.time > _nextSpawnTime)
             {
                 //do stuff here (like instantiate)
-                if (_numberOfClients < maxClients)
+                if (numberOfClients < maxClients)
                 {
                     Instantiate(clientPrefab, new Vector2(spawner.transform.position.x, spawner.transform.position.y), Quaternion.identity);
-                    _numberOfClients++;
+                    numberOfClients++;
                 }
 
                 //increment next_spawn_time
